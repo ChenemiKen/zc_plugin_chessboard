@@ -17,6 +17,15 @@ class GameController {
       var date_ob = new Date();
       var Player1 = req.body.playerId;
       var Player2 = "playerY"
+
+      // Temporary cache store
+      const result = save(gameId, {
+        gameId,
+        playerOne: playerId,
+        playerTwo: false,
+      });
+
+      // Save the new game in DB
       var new_game =  {
           game_id: game_id,
           Player1: Player1,
